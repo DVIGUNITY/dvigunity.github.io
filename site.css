@@ -42,7 +42,7 @@ body {
 }
 
 .sorry {
-    font-size: min(15vw, 20vh);
+    font-size: min(15vw, 23vh);
     line-height: 1em;
     text-align: center;
     text-transform: uppercase;
@@ -50,7 +50,7 @@ body {
 }
 
 .full-of-projects {
-    font-size: min(6vw, 8vh);
+    font-size: min(6vw, 10vh);
     line-height: 117%;
     text-align: center;
     text-transform: uppercase;
