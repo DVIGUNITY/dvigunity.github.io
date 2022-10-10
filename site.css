@@ -1,0 +1,91 @@
+body {
+    background: #EAE6DF;
+    font-family: 'Poppins', serif;
+    font-style: normal;
+    font-weight: 900;
+    height: 95vh;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.logo {
+    position: fixed;
+    top: 5vh;
+    left: 5vw;
+    max-height: 20vh;
+}
+
+.person-1 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    mix-blend-mode: multiply;
+    max-height: 100vh;
+    max-width: 30vw;
+}
+
+
+.person-2 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    max-height: 70vh;
+}
+
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.sorry {
+    font-size: min(15vw, 20vh);
+    line-height: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FF7800;
+}
+
+.full-of-projects {
+    font-size: min(6vw, 8vh);
+    line-height: 117%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #EAE6DF;
+    text-shadow: -0.04em -0.04em 0 #2ED3FF,
+    0 -0.04em 0 #2ED3FF,
+    0.04em -0.04em 0 #2ED3FF,
+    -0.04em 0 0 #2ED3FF,
+    0.04em 0 0 #2ED3FF,
+    -0.04em 0.04em 0 #2ED3FF,
+    0 0.04em 0 #2ED3FF,
+    0.04em 0.04em 0 #2ED3FF,
+    0.1em 0.1em 0 #2ED3FF;
+}
+
+.follow-button {
+    display: flex;
+    background: #FF7800;
+    transition: background-color 0.2s;
+    border-radius: 8px;
+    font-weight: 300;
+    font-size: min(3vw, 3vh);
+    line-height: 2em;
+    padding: 0 5ex;
+    text-decoration: none;
+    color: white;
+    margin-top: 6vh;
+    align-items: center;
+}
+
+.follow-button:hover {
+    background: #FFA825;
+}
+
+.linkedin-button {
+    margin-left: 1ex;
+    height: 50%;
+}
