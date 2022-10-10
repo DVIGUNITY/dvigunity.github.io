@@ -31,6 +31,7 @@ body {
     bottom: 0;
     left: 0;
     max-height: 70vh;
+    max-width: 50vw;
     z-index: 100;
 }
 
