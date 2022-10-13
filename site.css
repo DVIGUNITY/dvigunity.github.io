@@ -30,6 +30,7 @@ body, body * {
     left: 5vw;
     max-height: 20vh;
     max-width: 20vw;
+    pointer-events: none;
 }
 
 .person-1 {
@@ -52,7 +53,7 @@ body, body * {
     pointer-events: none;
 }
 
-.centered-container {
+.content-wrapper {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -61,6 +62,7 @@ body, body * {
     text-align: center;
     height: 100vh;
     padding: 0 3vw;
+    z-index: 102;
 }
 
 .sorry {
