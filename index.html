@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Dvigunity</title>
     <link rel="stylesheet" href="site.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,900">
@@ -13,9 +13,68 @@
 <div class="centered-container">
     <span class="sorry">Sorry</span>
     <span class="full-of-projects">we are so full<br>in projects....</span>
-    <a href="https://www.linkedin.com/company/dvigunity" class="follow-button">Follow us
+
+
+    <form class="email-input-wrapper" onsubmit="event.preventDefault(); subscribe()">
+        <input id="email-input" class="email-input" type="email" required placeholder="Your email address"/>
+        <button id="submit-email-button" type="submit" class="button loadable-button"><span>Get in touch</span>
+        </button>
+    </form>
+    <div id="messages"></div>
+    <div>It's always the baker's children who have no bread</div>
+    <div>Our website will be live very soon!</div>
+    <a href="https://www.linkedin.com/company/dvigunity" class="button follow-button">Follow us
         <img alt="linkedin logo" class="linkedin-button" src="assets/linkedin.svg"/>
     </a>
 </div>
+<script>
+    let subscribeSuccessful = false;
+    const apiEndpoint = "https://prod-22.francecentral.logic.azure.com/workflows/9b3146f0929248a9b7805d6502afb0e7/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=xX9PZaldmGAj9cXaDx2vbJ9LwkqFTvfIWlqC8ZX1FIg";
+
+    const messagesContainer = document.getElementById('messages');
+    const submitButton = document.getElementById('submit-email-button');
+
+    function subscribe() {
+        if (subscribeSuccessful) {
+            return;
+        }
+        loading();
+        const el = document.getElementById('email-input');
+        const email = el.value;
+        if (!email) return;
+        fetch(apiEndpoint, {
+            "headers": {"content-type": "application/json",},
+            "body": JSON.stringify({email}),
+            "method": "POST"
+        })
+            .then(success)
+            .catch(error);
+    }
+
+    function loading() {
+        messagesContainer.classList.remove('error');
+        submitButton.classList.add('loading');
+    }
+
+    function success(res) {
+        if (res.status < 200 || res.status >= 299) {
+            error();
+            return;
+        }
+
+        subscribeSuccessful = true;
+
+        messagesContainer.innerText = "Thank you for your interest!";
+        messagesContainer.classList.remove('error');
+        submitButton.classList.add('done');
+        submitButton.classList.remove('loading');
+    }
+
+    function error() {
+        messagesContainer.innerText = "Something went wrong.";
+        messagesContainer.classList.add('error');
+        submitButton.classList.remove('loading');
+    }
+</script>
 </body>
 </html>
