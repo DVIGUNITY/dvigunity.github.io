@@ -43,10 +43,10 @@
                 </div>
                 <div class="container__deco">
                     <img class="parallaxBlock__item parallaxBlock__item--main" data-speed-x="0.003" data-speed-y="0.05" src="./img/servicesWelcome__deco--main.png" alt="">
-                    
+
                     <img class="gsap--1" src="./img/welcome__deco--1.png" alt="">
                     <img class="gsap--2" src="./img/welcome__deco--2.png" alt="">
-                    
+
                     <svg class="path--1" width="500" height="350" xmlns="http://www.w3.org/2000/svg">
                         <path d="m157.26035,35.17469c-83.26568,41.29659 -127.67405,45.6436 -127.67405,111.93549c0,66.29189 -56.62066,145.62481 43.29815,156.49233c99.91882,10.86752 186.51513,64.11839 244.246,17.38804c57.73087,-46.73035 165.42115,-33.68932 154.31906,-85.85343c-11.10209,-52.16411 72.16359,-210.82995 -61.0615,-209.74319c-133.22509,1.08675 -169.86199,-31.51582 -253.12767,9.78077z" stroke="none" fill="none"/>
                     </svg>
@@ -57,7 +57,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section class="section">
             <div class="container container--2 w1440 parallaxBlock">
                 <div class="container__deco">
@@ -90,7 +90,7 @@
                     <a href="contact-us.html" class="btn btn--orange btn--arrow">call to action</a>
                 </div>
                 <div class="container__deco">
-                    <img class="parallaxBlock__item parallaxBlock__item--main" data-speed-x="0.003" data-speed-y="0.05" src="./img/concretiz.png" alt="">                   
+                    <img class="parallaxBlock__item parallaxBlock__item--main" data-speed-x="0.003" data-speed-y="0.05" src="./img/concretiz.png" alt="">
                 </div>
             </div>
         </section>
@@ -98,7 +98,7 @@
         <section class="section">
             <div class="container container--4 w1440 parallaxBlock">
                 <div class="container__deco">
-                    <img class="parallaxBlock__item parallaxBlock__item--main" data-speed-x="0.003" data-speed-y="0.05" src="./img/manag.png" alt="">                   
+                    <img class="parallaxBlock__item parallaxBlock__item--main" data-speed-x="0.003" data-speed-y="0.05" src="./img/manag.png" alt="">
                 </div>
                 <div class="container__description" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="300" data-aos-offset="-30">
                     <h2>Manag</h2>
@@ -112,7 +112,7 @@
                 </div>
             </div>
         </section>
-        
+
 
         <section class="section scrolledSection">
             <div class="contact w1440 parallaxBlock">
@@ -124,7 +124,8 @@
                     <p>Leave your contacts, and we will get in touch with you</p>
                     <input id="email-input" type="email" name="email" placeholder="Your email address" autocomplete="off">
                     <p class="terms">By clicking Send, you indicate that you agree to Hypnosis Terms and Conditions and Data Use Privacy Policy</p>
-                    <button id="submit-email-button" class="btn btn--orange btn--arrow" type="submit">Send your contacts</button>
+                    <button id="submit-email-button" class="btn btn--orange loadable-button w-100" type="submit"><span>Send your contacts</span></button>
+                    <div id="messages" class="subscribe-action-messages"></div>
                 </form>
 
                 <img class="parallaxBlock__item parallaxBlock__item--1" data-speed-x="0.015" src="./img/env1.png" alt="">
@@ -136,13 +137,13 @@
             <footer>
                 <div class="w1440">
                     <img class="footer__logo" src="./img/footer-logo.svg" alt="Dvigunity">
-                    
+
                     <div class="footer__item footer__item--1">
                         <h6>Reach us</h6>
-                        <p class="icon icon--mail">contact@dvigunity.com</p>
+                        <p class="icon icon--mail"><a href="mailto:contact@dvigunity.com">contact@dvigunity.com</a></p>
                         <p class="icon icon--adress">100 avenue André Morizet, 92100 Boulogne-Billancourt</p>
                     </div>
-    
+
                     <div class="footer__item footer__item--2">
                         <h6>Company</h6>
                         <ul>
@@ -151,7 +152,7 @@
                             <li><a href="services.html">Services</a></li>
                         </ul>
                     </div>
-    
+
                     <div class="footer__item footer__item--4">
                         <h6>Follow us</h6>
                         <p class="icon icon--linkedin"><a href="https://fr.linkedin.com/company/dvigunity" target="_blank">Our Linkedin</a></p>
@@ -196,55 +197,6 @@
     <script src="./js/aos.min.js"></script>
     <script src="./js/swiper.min.js"></script>
     <script src="./js/main.js"></script>
-
-    <script>
-        let subscribeSuccessful = false;
-        const apiEndpoint = "https://prod-22.francecentral.logic.azure.com/workflows/9b3146f0929248a9b7805d6502afb0e7/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=xX9PZaldmGAj9cXaDx2vbJ9LwkqFTvfIWlqC8ZX1FIg";
-    
-        const messagesContainer = document.getElementById('messages');
-        const submitButton = document.getElementById('submit-email-button');
-    
-        function subscribe() {
-            if (subscribeSuccessful) {
-                return;
-            }
-            loading();
-            const el = document.getElementById('email-input');
-            const email = el.value;
-            if (!email) return;
-            fetch(apiEndpoint, {
-                "headers": {"content-type": "application/json",},
-                "body": JSON.stringify({email}),
-                "method": "POST"
-            })
-                .then(success)
-                .catch(error);
-        }
-    
-        function loading() {
-            messagesContainer.classList.remove('error');
-            submitButton.classList.add('loading');
-        }
-    
-        function success(res) {
-            if (res.status < 200 || res.status >= 299) {
-                error();
-                return;
-            }
-    
-            subscribeSuccessful = true;
-    
-            messagesContainer.innerText = "Thank you for your interest!";
-            messagesContainer.classList.remove('error');
-            submitButton.classList.add('done');
-            submitButton.classList.remove('loading');
-        }
-    
-        function error() {
-            messagesContainer.innerText = "Something went wrong.";
-            messagesContainer.classList.add('error');
-            submitButton.classList.remove('loading');
-        }
-    </script>
+    <script src="./js/contact-us.js"></script>
 </body>
 </html>
