@@ -1,5 +1,5 @@
 let subscribeSuccessful = false;
-const apiEndpoint = "https://prod-22.francecentral.logic.azure.com/workflows/9b3146f0929248a9b7805d6502afb0e7/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=xX9PZaldmGAj9cXaDx2vbJ9LwkqFTvfIWlqC8ZX1FIg";
+const apiEndpoint = "https://prod-21.francecentral.logic.azure.com:443/workflows/678fb790a12f4a8ba06c965818843ff7/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=spMGzDhMRL8NZyMEOfL3pLOo-LYwr8pVReljmZg4feE";
 
 const messagesContainer = document.getElementById('messages');
 const submitButton = document.getElementById('submit-email-button');
