@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Privacy Policy and Terms of Use for the CanadianMachinistCalc mobile app.">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="https://use.typekit.net/rqa3gnz.css">
+    <title>Privacy Policy | CanadianMachinistCalc</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .policyPage {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .policyStage {
+            position: relative;
+            padding-bottom: 4rem;
+            overflow: hidden;
+        }
+
+        .policyStage::before,
+        .policyStage::after {
+            content: '';
+            position: absolute;
+            z-index: -3;
+            filter: blur(120px);
+        }
+
+        .policyStage::before {
+            width: 580px;
+            height: 580px;
+            left: -180px;
+            top: 520px;
+            background: rgba(255, 92, 0, 0.28);
+        }
+
+        .policyStage::after {
+            width: 640px;
+            height: 640px;
+            right: -220px;
+            top: 120px;
+            background: rgba(80, 202, 255, 0.18);
+        }
+
+        .policyHeroSection {
+            min-height: calc(100vh - 175px);
+            height: auto;
+            padding: 0 1rem 3rem;
+        }
+
+        .contactUs.policyPage .policyHeroSection .container__description h2 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1;
+            word-spacing: normal;
+            margin-bottom: 1rem;
+        }
+
+        .contactUs.policyPage .policyHeroSection .container__description p {
+            max-width: 620px;
+            font-size: 1.375rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .contactUs.policyPage .policyHeroSection .container__description .policyEyebrow {
+            font-family: 'Obviously', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.2;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #50CAFF;
+            margin-bottom: 1rem;
+        }
+
+        .policyHeroSection .container__deco {
+            align-self: flex-end;
+        }
+
+        .policyHeroSection .parallaxBlock__item--main {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .policyHeroSection .parallaxBlock__item--1 {
+            right: 0;
+            top: 8%;
+            max-height: 20%;
+        }
+
+        .policyHeroSection .gsap--1,
+        .policyHeroSection .gsap--2 {
+            animation: policyFloat 8s ease-in-out infinite alternate;
+        }
+
+        .policyHeroSection .gsap--2 {
+            animation-duration: 10s;
+        }
+
+        .policyHeroSection .path--1,
+        .policyHeroSection .path--2 {
+            opacity: 0.35;
+        }
+
+        .policyContentSection {
+            position: relative;
+            z-index: 1;
+            padding: 2rem 0 0;
+        }
+
+        .policyContent {
+            position: relative;
+            display: grid;
+            grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+            gap: 2rem;
+            align-items: start;
+            padding: 0 1rem;
+        }
+
+        .policySidebar {
+            position: relative;
+        }
+
+        .policySidebar__copy,
+        .policyCard {
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(37.5px);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+        }
+
+        .policySidebar__copy {
+            padding: 2rem;
+            border-radius: 28px;
+            margin-bottom: 1.5rem;
+        }
+
+        .policyPill {
+            display: inline-block;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0.875rem 0.65rem;
+            border-radius: 999px;
+            background: rgba(80, 202, 255, 0.16);
+            color: #50CAFF;
+            font-family: 'Obviously', sans-serif;
+            font-size: 0.875rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .policySidebar__copy h3 {
+            margin: 0 0 1rem;
+            font-family: 'Obviously-wide', sans-serif;
+            font-size: 1.75rem;
+            line-height: 1.2;
+            color: #FFF;
+        }
+
+        .policySidebar__copy p {
+            margin: 0 0 1.5rem;
+            color: rgba(255, 255, 255, 0.86);
+            line-height: 1.85;
+        }
+
+        .policyHighlights {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 0.85rem;
+        }
+
+        .policyHighlights li {
+            position: relative;
+            padding-left: 1.5rem;
+            color: #FFF;
+            line-height: 1.6;
+        }
+
+        .policyHighlights li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.65rem;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #FF7800;
+            box-shadow: 0 0 16px rgba(255, 120, 0, 0.6);
+        }
+
+        .policySidebar__visual {
+            position: relative;
+            min-height: 420px;
+        }
+
+        .policySidebar__visual::before {
+            content: '';
+            position: absolute;
+            inset: 20% 12% 10%;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.16);
+            filter: blur(60px);
+            z-index: -1;
+        }
+
+        .policySidebar__main {
+            position: relative;
+            display: block;
+            max-width: 100%;
+            max-height: 420px;
+            margin: 0 auto;
+        }
+
+        .policyCard {
+            padding: 2.25rem;
+            border-radius: 32px;
+            color: #FFF;
+        }
+
+        .policyCard::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+            pointer-events: none;
+        }
+
+        .policyCard section {
+            position: relative;
+            z-index: 1;
+        }
+
+        .policyCard section + section {
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .policyCard h2 {
+            margin: 0 0 0.5rem;
+            font-family: 'Obviously-wide', sans-serif;
+            font-size: clamp(1.6rem, 3vw, 2.3rem);
+            line-height: 1.2;
+            word-spacing: normal;
+        }
+
+        .policyCard h3 {
+            margin: 1.75rem 0 0.75rem;
+            font-family: 'Obviously', sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.4;
+        }
+
+        .policyCard p,
+        .policyCard li {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.95;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .policyCard a {
+            color: #50CAFF;
+            text-decoration: none;
+            transition: color .3s ease;
+        }
+
+        .policyCard a:hover,
+        .policyCard a:focus {
+            color: #FF7800;
+        }
+
+        .policyCard p + p,
+        .policyCard p + ul,
+        .policyCard p + ol,
+        .policyCard ul + p,
+        .policyCard ol + p {
+            margin-top: 1rem;
+        }
+
+        .policyCard ul,
+        .policyCard ol {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .policyCard li + li {
+            margin-top: 0.35rem;
+        }
+
+        .policyMeta {
+            margin-bottom: 1.75rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .policyContact {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .policyContact li + li {
+            margin-top: 0.15rem;
+        }
+
+        .policyContent .parallaxBlock__item--1 {
+            left: 20px;
+            bottom: 140px;
+            max-height: 100px;
+            z-index: -1;
+        }
+
+        .policyContent .parallaxBlock__item--2 {
+            left: 240px;
+            bottom: 40px;
+            max-height: 65px;
+            z-index: -1;
+        }
+
+        .policyContent .parallaxBlock__item--3 {
+            right: -30px;
+            top: 120px;
+            max-height: 180px;
+            z-index: -1;
+        }
+
+        .policyStage .globalPath {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .policyStage .globalPath-1 {
+            top: 120px;
+        }
+
+        .policyStage .globalPath-2 {
+            top: 760px;
+        }
+
+        .policyStage .globalPath-3 {
+            top: 1580px;
+        }
+
+        .policyStage .globalPathDeco-1 {
+            top: 390px;
+            left: 18%;
+            animation: policyFloat 12s ease-in-out infinite alternate;
+        }
+
+        .policyStage .globalPathDeco-2 {
+            top: 1080px;
+            right: 18%;
+            animation: policyFloat 14s ease-in-out infinite alternate;
+        }
+
+        .policyStage .globalPathDeco-3 {
+            top: 1770px;
+            left: 12%;
+            animation: policyFloat 11s ease-in-out infinite alternate;
+        }
+
+        .policyPage footer {
+            position: relative;
+            z-index: 2;
+            margin-top: 0;
+        }
+
+        @keyframes policyFloat {
+            from {
+                transform: translate3d(0, -8px, 0);
+            }
+
+            to {
+                transform: translate3d(0, 12px, 0);
+            }
+        }
+
+        @media (max-width: 960px) {
+            .policyHeroSection {
+                min-height: auto;
+            }
+
+            .policyContent {
+                grid-template-columns: 1fr;
+            }
+
+            .policySidebar__visual {
+                min-height: 320px;
+            }
+
+            .policySidebar__main {
+                max-height: 320px;
+            }
+
+            .policyContent .parallaxBlock__item--3 {
+                right: 0;
+                top: auto;
+                bottom: -40px;
+            }
+
+            .policyStage .globalPath-2 {
+                top: 980px;
+            }
+
+            .policyStage .globalPath-3 {
+                top: 2140px;
+            }
+
+            .policyStage .globalPathDeco-2 {
+                top: 1320px;
+            }
+
+            .policyStage .globalPathDeco-3 {
+                top: 2320px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .policyHeroSection {
+                padding-bottom: 1rem;
+            }
+
+            .contactUs.policyPage .policyHeroSection .container__description p {
+                font-size: 1.125rem;
+                line-height: 1.7;
+            }
+
+            .policySidebar__copy,
+            .policyCard {
+                padding: 1.5rem;
+                border-radius: 24px;
+            }
+
+            .policySidebar__copy h3 {
+                font-size: 1.4rem;
+            }
+
+            .policySidebar__visual {
+                min-height: 260px;
+            }
+
+            .policySidebar__main {
+                max-height: 260px;
+            }
+
+            .policyContent .parallaxBlock__item--1,
+            .policyContent .parallaxBlock__item--2,
+            .policyContent .parallaxBlock__item--3 {
+                display: none;
+            }
+
+            .policyStage .globalPath-2 {
+                top: 1160px;
+            }
+
+            .policyStage .globalPath-3 {
+                top: 2480px;
+            }
+
+            .policyStage .globalPathDeco-1 {
+                left: 8%;
+            }
+
+            .policyStage .globalPathDeco-2 {
+                top: 1520px;
+                right: 8%;
+            }
+
+            .policyStage .globalPathDeco-3 {
+                top: 2660px;
+                left: 6%;
+            }
+        }
+    </style>
+</head>
+<body class="contactUs policyPage">
+    <div class="policyStage">
+        <header id="header" class="header w1440">
+            <h1><a href="/"><img src="./img/logo.svg" alt="Dvigunity"></a></h1>
+            <nav class="mainNav">
+                <ul id="primary-menu" class="mainNav__menu">
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="join-team.html">Join our Team</a></li>
+                </ul>
+                <ul class="mainNav__menuSecondary">
+                    <li><a href="contact-us.html" class="btn btn--orange">Contact us</a></li>
+                </ul>
+                <button id="menuToggle" class="menuToggle" aria-controls="primary-menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </header>
+
+        <main>
+            <section class="container container--main container--1 w1440 parallaxBlock policyHeroSection">
+                <div class="container__description">
+                    <p class="policyEyebrow">CanadianMachinistCalc</p>
+                    <h2>Privacy Policy</h2>
+                    <p>A local-first calculator and reference tool for machinists.</p>
+                    <a href="#policy-document" class="btn btn--orange btn--arrow">Read the policy</a>
+                </div>
+                <div class="container__deco">
+                    <img class="parallaxBlock__item parallaxBlock__item--main" data-speed-x="0.003" data-speed-y="0.05" src="./img/contact__deco--main.png" alt="">
+                    <img class="parallaxBlock__item parallaxBlock__item--1" data-speed-x="0.007" data-speed-y="0.01" src="./img/welcome__deco--3.png" alt="">
+                    <img class="gsap--1" src="./img/welcome__deco--1.png" alt="">
+                    <img class="gsap--2" src="./img/welcome__deco--2.png" alt="">
+
+                    <svg class="path--1" width="500" height="350" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m157.26035,35.17469c-83.26568,41.29659 -127.67405,45.6436 -127.67405,111.93549c0,66.29189 -56.62066,145.62481 43.29815,156.49233c99.91882,10.86752 186.51513,64.11839 244.246,17.38804c57.73087,-46.73035 165.42115,-33.68932 154.31906,-85.85343c-11.10209,-52.16411 72.16359,-210.82995 -61.0615,-209.74319c-133.22509,1.08675 -169.86199,-31.51582 -253.12767,9.78077z" stroke="none" fill="none"/>
+                    </svg>
+
+                    <svg class="path--2" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse ry="100" rx="100" cy="100" cx="100" stroke="none" fill="none"/>
+                    </svg>
+                </div>
+            </section>
+
+            <section class="policyContentSection">
+                <div class="policyContent w1440 parallaxBlock">
+                    <aside class="policySidebar">
+                        <div class="policySidebar__copy">
+                            <span class="policyPill">Mobile app policy page</span>
+                            <p>CanadianMachinistCalc is presented here as a local-first app for machinists.</p>
+                            <ul class="policyHighlights">
+                                <li>No account creation required</li>
+                                <li>No ads, analytics, or user profiling</li>
+                                <li>Calculations are processed locally</li>
+                            </ul>
+                        </div>
+
+                        <div class="policySidebar__visual">
+                            <img class="parallaxBlock__item policySidebar__main" data-speed-x="0.004" data-speed-y="0.03" src="./img/PERSONA5 1.png" alt="">
+                        </div>
+                    </aside>
+
+                    <div id="policy-document" class="policyCard">
+                        <section>
+                            <h2>Privacy Policy</h2>
+                            <p class="policyMeta">Effective date: July 7, 2026</p>
+                            <p>CanadianMachinistCalc is a calculator and reference app for machinists. This app is designed to work locally on the user's device.</p>
+
+                            <h3>Information We Collect</h3>
+                            <p>We do not intentionally collect, store, or sell personal information such as:</p>
+                            <ul>
+                                <li>name</li>
+                                <li>email address</li>
+                                <li>phone number</li>
+                                <li>precise location</li>
+                                <li>contacts</li>
+                                <li>photos</li>
+                                <li>microphone or camera data</li>
+                                <li>payment information</li>
+                            </ul>
+                            <p>The app does not require account creation.</p>
+
+                            <h3>How the App Works</h3>
+                            <p>Calculation inputs and reference lookups are processed locally on the device. We do not use the app to intentionally send personal calculation data to our servers.</p>
+
+                            <h3>Third-Party Services</h3>
+                            <p>This version of the app does not use advertising services, analytics tools, or third-party tracking technologies for user profiling.</p>
+
+                            <h3>Data Sharing</h3>
+                            <p>We do not sell, rent, or share personal information with third parties.</p>
+
+                            <h3>Data Retention</h3>
+                            <p>Because we do not intentionally collect personal information through the app, we do not retain personal user data on our servers.</p>
+
+                            <h3>Children's Privacy</h3>
+                            <p>This app is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
+
+                            <h3>Changes to This Privacy Policy</h3>
+                            <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date.</p>
+
+                            <h3>Contact</h3>
+                            <p>If you have questions about this Privacy Policy, contact:</p>
+                            <ul class="policyContact">
+                                <li>Dvigunity</li>
+                                <li><a href="mailto:contact@dvigunity.com">contact@dvigunity.com</a></li>
+                                <li><a href="contact-us.html">www.dvigunity.com/contact-us.html</a></li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2>Terms of Use</h2>
+                            <p>By using CanadianMachinistCalc, you agree to the following terms:</p>
+                            <ol>
+                                <li>This app is provided as a calculation and reference tool for general informational use.</li>
+                                <li>Drill, tap, fraction, inch, and metric results are provided for reference only and should always be verified against official standards, manufacturer documentation, and shop procedures.</li>
+                                <li>The app is provided "as is" without warranties of any kind, express or implied.</li>
+                                <li>We are not responsible for any loss, damage, machining error, production error, or other result arising from the use of this app.</li>
+                                <li>Users are responsible for verifying calculations and ensuring safe and proper use in their own work environment.</li>
+                                <li>We may update, modify, or discontinue the app at any time without notice.</li>
+                            </ol>
+                        </section>
+                    </div>
+
+                    <img class="parallaxBlock__item parallaxBlock__item--1" data-speed-x="0.015" src="./img/env1.png" alt="">
+                    <img class="parallaxBlock__item parallaxBlock__item--2" data-speed-x="0.02" src="./img/env2.png" alt="">
+                    <img class="parallaxBlock__item parallaxBlock__item--3" data-speed-x="0.008" src="./img/env3.png" alt="">
+                </div>
+            </section>
+        </main>
+
+        <div class="globalPath">
+            <svg class="globalPath-1" height="514" viewBox="0 0 1440 514" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1647.56 59.5002C1098.56 -104 724.565 199.749 481.064 59.4996C237.563 -80.7498 -204.936 15.0006 -249.936 513.5" stroke="white" stroke-opacity="0.1"/>
+            </svg>
+
+            <svg class="globalPath-2" height="1019" viewBox="0 0 1186 1019" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M767.766 1017.62C-1335.32 -642.43 1542.51 1060.62 1645.8 660.795C1749.1 260.966 1351.68 116.21 890.598 1.06516" stroke="white" stroke-opacity="0.1"/>
+            </svg>
+
+            <svg class="globalPath-3" height="1316" viewBox="0 0 1299 1316" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M-204.408 1314.83C355.261 1192.75 535.971 746.118 816.927 751.274C1097.88 756.429 1439.06 458.815 1237.62 0.611054" stroke="white" stroke-opacity="0.1"/>
+            </svg>
+
+            <div class="globalPathDeco globalPathDeco-1"></div>
+            <div class="globalPathDeco globalPathDeco-2"></div>
+            <div class="globalPathDeco globalPathDeco-3"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="w1440">
+            <img class="footer__logo" src="./img/footer-logo.svg" alt="Dvigunity">
+
+            <div class="footer__item footer__item--1">
+                <h6>Reach us</h6>
+                <p class="icon icon--mail"><a href="mailto:contact@dvigunity.com">contact@dvigunity.com</a></p>
+                <p class="icon icon--adress">100 avenue André Morizet, 92100 Boulogne-Billancourt</p>
+            </div>
+
+            <div class="footer__item footer__item--2">
+                <h6>Company</h6>
+                <ul>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__item footer__item--4">
+                <h6>Follow us</h6>
+                <p class="icon icon--linkedin"><a href="https://fr.linkedin.com/company/dvigunity" target="_blank">Our Linkedin</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const primaryMenu = document.getElementById('primary-menu');
+            const header = document.getElementById('header');
+
+            if (menuToggle && primaryMenu && header) {
+                menuToggle.onclick = function(event) {
+                    menuToggle.classList.toggle('active');
+                    primaryMenu.classList.toggle('active');
+                    header.classList.toggle('active');
+
+                    if (event.currentTarget.getAttribute('aria-expanded') === 'false') {
+                        event.currentTarget.setAttribute('aria-expanded', 'true');
+                    } else {
+                        event.currentTarget.setAttribute('aria-expanded', 'false');
+                    }
+                };
+            }
+
+            if (window.innerWidth <= 900) {
+                return;
+            }
+
+            document.addEventListener('mousemove', function(event) {
+                const halfWidth = window.innerWidth / 2;
+                const halfHeight = window.innerHeight / 2;
+
+                document.querySelectorAll('.parallaxBlock__item').forEach(function(item) {
+                    const speedX = item.getAttribute('data-speed-x') ? Number(item.getAttribute('data-speed-x')) : 0.005;
+                    const speedY = item.getAttribute('data-speed-y') ? Number(item.getAttribute('data-speed-y')) : 0.005;
+                    const moveX = 0 - (event.clientX - halfWidth) * speedX;
+                    const moveY = item.getAttribute('data-speed-y') === '0' ? 0 : 0 - (event.clientY - halfHeight) * speedY;
+
+                    item.style.transform = 'translate(' + moveX + 'px, ' + moveY + 'px)';
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
